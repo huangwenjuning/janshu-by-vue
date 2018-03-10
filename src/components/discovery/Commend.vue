@@ -55,9 +55,9 @@
                     <p class="article">{{ commendArticle.article }}</p>
                     <div class="meta">
                             <a class="collection-tag" target="_blank" href="">{{ commendArticle.tag }}</a>       
-                            <a target="_blank" href=""><i class="iconfont ic-list-comments">&#xe619;</i> {{ commendArticle.comments }}</a>      
-                            <span><i class="iconfont ic-list-like"></i>&#xe630; {{ commendArticle.like }}</span>
-                            <span><i class="iconfont ic-list-money">&#xe604;</i>{{ commendArticle.money }}</span>
+                            <a target="_blank" href=""><i class="iconfont icon-xiaoxi"></i> {{ commendArticle.comments }}</a>      
+                            <span><i class="iconfont icon-xihuan"></i> {{ commendArticle.like }}</span>
+                            <span><i class="iconfont icon-qian"></i>{{ commendArticle.money }}</span>
                     </div>
                 </div>
                 <!-- 标题图片 -->

@@ -1,53 +1,49 @@
 <template>
-  <div class="discovery">
-      <div class="list">
-            <div class="list1"><router-link to="/" exact>推荐</router-link></div>
-            <div class="list2"><router-link to="/publish"  exact>连载</router-link></div>        
-            <div class="list3"><router-link to="/specialNews"  exact>专题</router-link></div>   
-            <img src="" alt="">
-      </div> 
-      <!-- <commend></commend> -->
-      <!-- <publish></publish> -->
-      <!-- <special-news></special-news> -->
-      <router-view></router-view>
-  </div>
+<div class="discovery">
+    <!-- <div class="page-title">N</div> -->
+    <!-- navbar -->
+    <mt-navbar class="page-part" v-model="selected">
+        <mt-tab-item id="1">推荐</mt-tab-item>
+        <mt-tab-item id="2">连载</mt-tab-item>
+        <mt-tab-item id="3">专题</mt-tab-item>
+    </mt-navbar>
+
+    <!-- <div>
+        <mt-cell class="page-part" title="">{{ selected }}</mt-cell>
+    </div> -->
+    <!-- tabcontainer -->
+    <mt-tab-container v-model="selected">                        
+        <mt-tab-container-item id="1"><commend></commend> </mt-tab-container-item>
+        <mt-tab-container-item id="2"><publish></publish> </mt-tab-container-item>
+        <mt-tab-container-item id="3"><special-news></special-news> </mt-tab-container-item>
+    </mt-tab-container>
+    <router-view></router-view>
+</div>
 </template>
 <script>
 import Commend from '../../components/discovery/Commend'
 import Publish from '../../components/discovery/Publish'
 import SpecialNews from '../../components/discovery/SpecialNews'
     export default {
-        name: "discovery",
+        name: 'discovery',
         components: {
             Commend,
             Publish,
             SpecialNews
+        },
+        data() {
+            return {
+                selected: '1'
+            }
         }
-
     }
 </script>
-<style scoped>
-    .list {
-        font-size: .453333rem /* 34/75 */;
-        line-height: 1.173333rem /* 88/75 */;
-        margin-left: 2.453333rem /* 184/75 */;
-        /* padding-bottom: .426667rem 32/75; */
-    }
-    .list1 {
-        float: left;   
-        text-align: center;             
-    }
-    .list2, .list3 {
-        float: left;
-        padding-left: 1.12rem /* 84/75 */;
-        text-align: center;        
-    }
+<style>
     a {
         text-decoration: none;
         border-radius: 5px;
     }
-    .router-link-active {
+    /* .router-link-active {
         color: #ea6f5a
-    }
-    
+    } */
 </style>

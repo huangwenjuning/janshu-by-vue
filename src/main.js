@@ -6,10 +6,12 @@ import MintUI from 'mint-ui'
 import axios from 'axios'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueRouter from 'vue-router'
+// import Icon from 'vue-awesome/components/Icon'
 // 自定义样式，覆盖原有mint-ui样式
 // import './assets/css/mint-ui-style.css'
 import "swiper/dist/css/swiper.css"
 import Routes from "./router/routes"
+import 'mint-ui/lib/style.css'
 
 
 Vue.config.productionTip = false
@@ -21,6 +23,7 @@ Vue.prototype.axios = axios;
 Vue.use(VueRouter);
 Vue.use(MintUI);
 Vue.use(VueAwesomeSwiper);
+// Vue.component('icon', Icon)
 /* eslint-disable no-new */
 
 // 创建路由
@@ -33,5 +36,8 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
-  router: router
+  router: router,
+  axios,
+  MintUI,
+  VueRouter
 })
