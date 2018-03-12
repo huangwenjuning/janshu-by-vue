@@ -1,11 +1,13 @@
 <template>
   <div class="index">
-      <tabbar></tabbar>
+    <!-- <router-link to="/"></router-link> -->
+    <tabbar></tabbar>
   </div>
 </template>
 <script>
 import Tabbar from '../components/public/Tabbar'
     export default {
+      name: 'index',
       components: {
         Tabbar
       }
@@ -14,4 +16,4 @@ import Tabbar from '../components/public/Tabbar'
 <style scoped>
 
 </style>
- 
+  

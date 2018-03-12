@@ -26,7 +26,6 @@
             <div class="swipe_items">
                 <a href=""><img src="../../assets/img/discovery/swipe_06.png" alt=""><br>积分商城</a>
             </div>
-            <div class="gap"></div>            
         </div>
         <!-- <div class="nav">
             <swiper :options="swiperOption">
@@ -40,7 +39,6 @@
         </div> -->
 
         <!-- 内容部分 -->
-        <div  class="line">
             <div class="content" v-for="commendArticle in commendArticles" >
                 <!-- 作者 标题 内容 点赞 -->
                 <div class="author">
@@ -55,9 +53,9 @@
                     <p class="article">{{ commendArticle.article }}</p>
                     <div class="meta">
                             <a class="collection-tag" target="_blank" href="">{{ commendArticle.tag }}</a>       
-                            <a target="_blank" href=""><i class="iconfont icon-xiaoxi"></i> {{ commendArticle.comments }}</a>      
-                            <span><i class="iconfont icon-xihuan"></i> {{ commendArticle.like }}</span>
-                            <span><i class="iconfont icon-qian"></i>{{ commendArticle.money }}</span>
+                            <a target="_blank" href=""><i class="iconfont icon-xiaoxi colors" ></i> {{ commendArticle.comments }}</a>      
+                            <span><i class="iconfont icon-xihuan colors" ></i> {{ commendArticle.like }}</span>
+                            <span><i class="iconfont icon-qian colors" ></i>{{ commendArticle.money }}</span>
                     </div>
                 </div>
                 <!-- 标题图片 -->
@@ -69,7 +67,6 @@
                         <img :src="commendArticle.coverImg" alt="封面">
                     </a>
                 </div>
-            </div>
         </div>
         
         
@@ -123,7 +120,7 @@
     .swipe {
         /* display: inline; */
         height: 2.533333rem/* 190/75 */;
-        float: left;        
+        float: left;   
     }
 
     .swipe_items {
@@ -136,12 +133,25 @@
         width: 1.333333rem/* 100/75 */;
         height: 1.333333rem/* 100/75 */;
     }
-    /*  */
+    
     .content {
         background: #fff;
         display: inline-block;
         margin-left: .4rem/* 30/75 */;  
         margin-top: .266667rem /* 20/75 */;      
+    }
+    .content {
+        position: relative;
+    }
+    .content:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -.213333rem /* 16/75 */;
+        height: .013333rem /* 1/75 */;
+        border-bottom: .013333rem /* 1/75 */ solid #D5D5D5;
+        transform: rotateY(0.5);
     }
     .author {
         position: relative;
@@ -153,7 +163,7 @@
     }
     .author .nickname{
         position: absolute;
-        margin-top: .133333rem /* 10/75 */;
+        margin-top: .08rem /* 6/75 */;
         margin-left: .133333rem /* 10/75 */;
         color: #2f2f2f;
         font-size: .32rem /* 24/75 */;      
@@ -163,9 +173,15 @@
         width: 6.666667rem /* 500/75 */;
         margin-top: .24rem /* 18/75 */;        
     }
-    .contentL .title {
+    .contentL .title a{
         font-size: .506667rem /* 38/75 */;
         color: #2f2f2f;
+    }
+    .colors {
+        color: #999;
+        text-align: center;
+        margin-left: .32rem /* 24/75 */;
+        margin-top: .16rem /* 12/75 */;
     }
     .contentL .article {
         margin-top:.293333rem /* 22/75 */;        
@@ -216,16 +232,6 @@
         border: 1px solid rgba(236,97,73,.7);
         border-radius: 3px;
     }
-    .line {
-        border-bottom: .006667rem /* 0.5/75 */ solid #999;
-    }
+   
     
-    @font-face {
-        font-family: 'iconfont';  /* project id 585142 */
-        src: url('//at.alicdn.com/t/font_585142_3kbv9yv25r8uxr.eot');
-        src: url('//at.alicdn.com/t/font_585142_3kbv9yv25r8uxr.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_585142_3kbv9yv25r8uxr.woff') format('woff'),
-        url('//at.alicdn.com/t/font_585142_3kbv9yv25r8uxr.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_585142_3kbv9yv25r8uxr.svg#iconfont') format('svg');
-}
 </style>

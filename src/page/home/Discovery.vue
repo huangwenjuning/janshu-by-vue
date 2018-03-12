@@ -46,4 +46,13 @@ import SpecialNews from '../../components/discovery/SpecialNews'
     /* .router-link-active {
         color: #ea6f5a
     } */
+    .mint-navbar a {
+        color: #2F2F2F;
+        text-decoration: none;
+   }
+   
+   .mint-tab-item-label {
+       font-size: .506667rem /* 38/75 */;
+       font-weight: 500;
+   }
 </style>

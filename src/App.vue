@@ -2,17 +2,22 @@
   <div id="app">
     <!-- <news></news> -->
     <!-- <index></index> -->
-    <discovery></discovery>
+    <!-- <discovery></discovery> -->
     <!-- <follow></follow> -->
-    <!-- <router-view></router-view> -->
+    <!-- <mine></mine> -->
+    <!-- <tabbar></tabbar>         -->
+    <router-view></router-view>
+    <index></index>
   </div>
 </template>
 
 <script>
-import News from './page/home/News';
-import Discovery from './page/home/Discovery';
-import Follow from './page/home/Follow';
 import Index from './page/Index';
+import Tabbar from './components/public/Tabbar.vue'
+import Follow from './page/home/Follow';
+import Discovery from './page/home/Discovery';
+import Mine from './page/home/Mine';
+import News from './page/home/News';
 
 export default {
   name: 'App',
@@ -20,7 +25,9 @@ export default {
     News,
     Discovery,
     Follow,
-    Index
+    Index,
+    Mine,
+    Tabbar
   }
 } 
 </script>
