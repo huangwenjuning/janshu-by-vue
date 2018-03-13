@@ -5,7 +5,7 @@
         <div class="kindsItem" >
             <div class="kinds_grid" v-for="index in publishItem.length" :key="index.id"><a href="#">
                 <img :src="imgArr[index-1]" alt=""><br>{{publishItem[index-1]}}</a></div>
-            </div>
+        </div>
         <!-- 我关注的连载 -->
         <div class="followPublish">
             <a href=""><img src="../../assets/img/discovery/p11.png" alt="">
@@ -30,7 +30,7 @@
                             <div class="info">
                                 <img :src="publishtext.avatar" alt="">
                                 <a href=""><span class="nickname">{{ publishtext.nickname }}</span></a>
-                                <a href=""><span class="look">{{ publishtext.look }}</span></a>
+                                <a href=""><span class="look"><i class="iconfont icon-liulan"></i>{{ publishtext.look }}</span></a>
                             </div>
                         </div> 
                 </div>
@@ -50,7 +50,7 @@
                             <div class="info">
                                 <img :src="publishtext.avatar" alt="">
                                 <a href=""><span class="nickname">{{ publishtext.nickname }}</span></a>
-                                <a href=""><span class="look">{{ publishtext.look }}</span></a>
+                                <a href=""><span class="look"><i class="iconfont icon-liulan"></i>{{ publishtext.look }}</span></a>
                             </div>
                         </div> 
                 </div>
@@ -95,6 +95,10 @@
         margin-top: .32rem /* 24/75 */;
         background-color: #fff;        
     }
+    .kindsItem a {
+        color: #2f2f2f;
+        font-size: .346667rem /* 26/75 */;
+    }
     .kinds_grid {
         width: 20%;
         height: 2rem /* 150/75 */;
@@ -119,6 +123,7 @@
         display: inline-block;
         position: absolute;
         margin-top: -.026667rem /* 2/75 */;
+        color: #2f2f2f;
     }
     .followPublish img, .arrow img {
         width: 1.2rem /* 90/75 */;
@@ -197,6 +202,9 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+    }
+    .title a, .info a {
+        color: #2f2f2f;
     }
     .title, .info {
         margin-left: .186667rem /* 14/75 */;

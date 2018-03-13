@@ -1,13 +1,5 @@
 <template>
   <div class="specialNews">
-      <!-- 轮播图 -->
-          <!-- 轮播图 -->
-    <!-- <mt-swipe :auto="4000" class="shop-swiper">
-      <mt-swipe-item v-for="swipeItem in swipeArr"  :key="swipeItem.id"  :style="{backgroundImage:'url(' + swipeItem.swipeUrl + ')'}">
-       <div class="shop-swiper-mask"><p class="swipe-desc">{{swipeItem.desc}}</p>
-       <p class="swipe-desc_watch">查看详情</p></div>
-      </mt-swipe-item>
-    </mt-swipe> -->
           
           <div class="specialItem">
               <div class="specials_grid" v-for="index in specialItem.length" :key="index.id">
@@ -27,7 +19,7 @@
     <div class="Grid">
       <div class="Grid-cell" v-for="n in 9" :key="n.id" >
         <a href="#"><img :src="url[n-1]" alt=""></a>
-        {{contentDesc[n-1]}}
+        <span>{{contentDesc[n-1]}}</span>
       </div>
     </div>
     </div>
@@ -61,6 +53,11 @@
         margin-top: .32rem /* 24/75 */;
         background-color: #fff;        
     }
+    .specialItem a {
+        color:#2f2f2f;
+        font-size: .373333rem /* 28/75 */;
+        font-weight: 500;
+    }
     .specials_grid {
         width: 20%;
         height: 2rem /* 150/75 */;
@@ -85,6 +82,7 @@
         display: inline-block;
         position: absolute;
         margin-top: -.026667rem /* 2/75 */;
+        color:#2f2f2f;
     }
     .followSpecial img, .arrow img {
         width: 1.2rem /* 90/75 */;
@@ -111,7 +109,15 @@
         margin: .4rem;
         padding-bottom: .4rem;
     }
-
+    .Grid a {
+        text-decoration: none;
+    }
+    .Grid-cell span {
+        display: inline-block;
+        width: 100%;
+         color: #2f2f2f;
+         text-align: center;
+    }
     .Grid-cell a>img {
         width: 100%;
         height: 100%;

@@ -20,7 +20,7 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(VueRouter);
 Vue.config.productionTip = false
 // ajax请求过期时间，最长5秒
-axios.defaults.timeout = 5000
+// axios.defaults.timeout = 5000
 // 将axios放入Vue的原型链中，所有的组件都可以使用
 Vue.prototype.axios = axios;
 

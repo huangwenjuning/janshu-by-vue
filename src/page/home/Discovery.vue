@@ -17,7 +17,6 @@
         <mt-tab-container-item id="2"><publish></publish> </mt-tab-container-item>
         <mt-tab-container-item id="3"><special-news></special-news> </mt-tab-container-item>
     </mt-tab-container>
-    <router-view></router-view>
 </div>
 </template>
 <script>
@@ -47,12 +46,43 @@ import SpecialNews from '../../components/discovery/SpecialNews'
         color: #ea6f5a
     } */
     .mint-navbar a {
-        color: #2F2F2F;
+        /* color: #2F2F2F; */
         text-decoration: none;
    }
-   
+   /* .is-selected .mint-tab-item-label{
+       color: #EA6F5A;
+       
+   } */
+   .mint-navbar{
+       position: relative;
+   }
+   .mint-navbar .mint-tab-item.is-selected {
+    border-bottom: 0 solid #EA6F5A;
+    color: #EA6F5A;
+    margin-bottom: -3px;
+}
+    /* .mint-navbar .mint-tab-item.is-selected:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 2px solid red;
+        z-index: 999;
+    }    */
+    .is-selected .mint-tab-item-label:after{
+        content: '';
+        position: absolute;
+        left: .8rem /* 60/75 */;
+        right: .693333rem /* 52/75 */;
+        bottom: -.32rem /* 24/75 */;
+        border-top: .106667rem /* 8/75 */ solid #EA6F5A;
+        z-index: 999;
+    }   
    .mint-tab-item-label {
        font-size: .506667rem /* 38/75 */;
        font-weight: 500;
+       position: relative;
    }
+   
 </style>

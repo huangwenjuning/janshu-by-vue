@@ -88,12 +88,7 @@
         data() {
             return {
                 commendArticles: [],
-                swiperOption: {
-                    sliderPerView: 5,
-                    spaceBetween: 10,
-                    slideToClickedSlide: true,
-                    direction: "horizontal",
-                }
+                
             }
         }
     }
@@ -133,7 +128,10 @@
         width: 1.333333rem/* 100/75 */;
         height: 1.333333rem/* 100/75 */;
     }
-    
+    .swipe a {
+        color: #2f2f2f;
+        font-size: .346667rem /* 26/75 */;
+    }
     .content {
         background: #fff;
         display: inline-block;
