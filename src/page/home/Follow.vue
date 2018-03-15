@@ -1,20 +1,26 @@
 <template>
   <div class="follow">
-        <div class="search"></div>
-        <div  v-for="follow in follows">
-        <div class="body">
-                <div class="info">
-                    <img class="avatar" :src=" follow.avatar " alt="">
-                    <span class="nickname">{{ follow.nickname }}</span>
-                </div>
-                <div class="banner"><img :src=" follow.banner " alt=""></div>
-                <div class="title">{{ follow.title }}</div>
-                <div class="text">{{ follow.text }}</div>
-                <div class="meta">
-                    <span >{{ follow.comment }}评论·{{ follow.like }}喜欢</span>
+      <div class="search">
+        <input type="search" placeholder="搜索简书上的内容和朋友">          
+      </div>
+      <div class="line"></div>
+        <div  v-for="article in articles" :key="article.id">
+                <div class="body">
+                        <div class="info">
+                            <img class="avatar" :src=" article.avatar " alt="">
+                            <span class="nickname">{{ article.nickname }}</span>
+                        </div>
+                    <router-link :to="'/article/' + article.id">
+                        <div class="banner"><img :src=" article.banner " alt=""></div>
+                        <div class="title">{{ article.title }}</div>
+                        <div class="text">{{ article.text }}</div>
+                    </router-link>
+                        <div class="meta">
+                            <span >{{ article.comment }}评论·{{ article.like }}喜欢</span>
+                        </div>
                 </div>
         </div>
-    </div>
+      
   </div>
 </template>
 <script>
@@ -26,8 +32,8 @@
         mounted() {
             this.axios.get('https://www.easy-mock.com/mock/5aa1f8fa106c1334ecc10350/janshu/janshu/follow')
             .then((response) =>{
-                this.follows = response.data.follows;
-                console.log(this.follows);
+                this.articles = response.data.articles;
+                console.log(this.articles);
             })
             .catch((error)=>{
                 console.log(error);
@@ -35,7 +41,7 @@
         },
         data() {
             return {
-                follows:[]
+                articles:[]
             }
         }
         
@@ -43,8 +49,25 @@
     }
 </script>
 <style scoped>
+    .search {
+        position: relative;
+    }  
+    .search input {
+        margin: 0 auto;
+        width: 9.466667rem /* 710/75 */;
+        margin-top: .4rem /* 30/75 */;
+        margin-left: .266667rem /* 20/75 */;
+        height: .773333rem /* 58/75 */;
+        text-align: center;
+        color:#b1b1b1;
+        font-size: .373333rem /* 28/75 */;
+        line-height: .773333rem /* 58/75 */;
+        /* border-radius: .333333rem 25/75; */
+        background: #f3f3f3;
+    }
+    
     .body {
-        margin: .426667rem /* 32/75 */ .506667rem /* 38/75 */ .666667rem /* 50/75 */ .426667rem /* 32/75 */;
+        margin: .426667rem /* 32/75 */ .453333rem /* 34/75 */  .666667rem /* 50/75 */ .426667rem /* 32/75 */;
     }
     /*  */
     .info {
@@ -92,5 +115,24 @@
         color: #888;
         font-size: .346667rem /* 26/75 */;
     }
-
+    .body {
+        position: relative;
+        padding-top: .48rem /* 36/75 */;
+    }
+    .body:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: .013333rem /* 1/75 */;
+        bottom: -1.066667rem /* 80/75 */;
+        border-bottom: .013333rem /* 1/75 */ solid #D5D5D5;
+        transform: rotateY(0.5);
+    }
+    .line {
+        border: .013333rem /* 1/75 */ solid #D5D5D5;
+        height: .013333rem /* 1/75 */;
+        margin-top: .32rem /* 24/75 */;
+        transform: rotateY(0.5);        
+    }
 </style>

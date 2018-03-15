@@ -18,6 +18,8 @@ import Follow from './page/home/Follow';
 import Discovery from './page/home/Discovery';
 import Mine from './page/home/Mine';
 import News from './page/home/News';
+// import Articles from './components/public/Articles.vue'
+import FollowArticles from './components/follow/FollowArticles'
 
 export default {
   name: 'App',
@@ -27,7 +29,8 @@ export default {
     Follow,
     Index,
     Mine,
-    Tabbar
+    Tabbar,
+    FollowArticles
   }
 } 
 </script>

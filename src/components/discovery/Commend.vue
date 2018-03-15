@@ -27,16 +27,6 @@
                 <a href=""><img src="../../assets/img/discovery/swipe_06.png" alt=""><br>积分商城</a>
             </div>
         </div>
-        <!-- <div class="nav">
-            <swiper :options="swiperOption">
-                <swiper-slide class="nav_item"><img src="" alt=""><br>排行榜</swiper-slide>
-                <swiper-slide class="nav_item"><img src="" alt=""><br>排行榜</swiper-slide>
-                <swiper-slide class="nav_item"><img src="" alt=""><br>排行榜</swiper-slide>
-                <swiper-slide class="nav_item"><img src="" alt=""><br>排行榜</swiper-slide>
-                <swiper-slide class="nav_item"><img src="" alt=""><br>排行榜</swiper-slide>
-                <swiper-slide class="nav_item"><img src="" alt=""><br>排行榜</swiper-slide>
-            </swiper>
-        </div> -->
 
         <!-- 内容部分 -->
             <div class="content" v-for="commendArticle in commendArticles" >
@@ -46,30 +36,27 @@
                             <img :src="commendArticle.avatar" alt="头像"></a>     
                         <a href="" class="nickname">{{ commendArticle.nickname }}</a>
                 </div>
-                <div class="contentL"> 
-                    <div class="title">
-                        <a href="">{{ commendArticle.title }}</a>
+                <router-link :to="'/commend/article/' + commendArticle.id">    
+                    <div class="contentL"> 
+                        <div class="title">
+                            <a href="">{{ commendArticle.title }}</a>
+                        </div>
+                        <p class="article">{{ commendArticle.article }}</p>
+                        <div class="meta">
+                                <a class="collection-tag" target="_blank" href="">{{ commendArticle.tag }}</a>       
+                                <a target="_blank" href=""><i class="iconfont icon-xiaoxi colors" ></i> {{ commendArticle.comments }}</a>      
+                                <span><i class="iconfont icon-xihuan colors" ></i> {{ commendArticle.like }}</span>
+                                <span><i class="iconfont icon-qian colors" ></i>{{ commendArticle.money }}</span>
+                        </div>
                     </div>
-                    <p class="article">{{ commendArticle.article }}</p>
-                    <div class="meta">
-                            <a class="collection-tag" target="_blank" href="">{{ commendArticle.tag }}</a>       
-                            <a target="_blank" href=""><i class="iconfont icon-xiaoxi colors" ></i> {{ commendArticle.comments }}</a>      
-                            <span><i class="iconfont icon-xihuan colors" ></i> {{ commendArticle.like }}</span>
-                            <span><i class="iconfont icon-qian colors" ></i>{{ commendArticle.money }}</span>
+                    <!-- 标题图片 -->
+                    <div class="contentR">
+                        <a href="" class="coverImg">
+                            <img :src="commendArticle.coverImg" alt="封面">
+                        </a>
                     </div>
-                </div>
-                <!-- 标题图片 -->
-                <div class="contentR">
-                    <a href="" class="more">
-                        <img src="" alt="">
-                    </a>
-                    <a href="" class="coverImg">
-                        <img :src="commendArticle.coverImg" alt="封面">
-                    </a>
-                </div>
-        </div>
-        
-        
+                </router-link>                
+            </div>   
     </div>
 </template>
 <script>
@@ -87,8 +74,7 @@
         },
         data() {
             return {
-                commendArticles: [],
-                
+                commendArticles: [],  
             }
         }
     }

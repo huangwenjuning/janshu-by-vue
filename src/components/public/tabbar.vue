@@ -10,36 +10,31 @@
     <mt-tab-container class="page-tabbar-container" v-model="selected">
         <mt-tab-container-item id="关注"></mt-tab-container-item>
         <mt-tab-container-item id="发现"></mt-tab-container-item> 
-        <mt-tab-container-item id="+"></mt-tab-container-item>
         <mt-tab-container-item id="消息"></mt-tab-container-item>
         <mt-tab-container-item id="我的"></mt-tab-container-item>
     </mt-tab-container>
 
     <mt-tabbar v-model="selected" fixed>
-      <mt-tab-item id=" ">
+      <mt-tab-item id="关注 ">
         <router-link to="/follow" exact>
-        <i class="iconfont icon-home" color="#EA6F5A"></i><br> 关注 
+        <i class="iconfont icon-home" ></i><br> 关注 
         </router-link>
       </mt-tab-item>
-      <mt-tab-item id=" ">
+      <mt-tab-item id="发现">
           <router-link to="/discovery" exact>
-          <i class="iconfont icon-faxian" color="#EA6F5A"></i><br>发现
+          <i class="iconfont icon-faxian" ></i><br>发现
           </router-link>       
       </mt-tab-item>
       
-      <mt-tab-item id=" ">
-          <router-link to="/add" exact>
-            <i class="iconfont icon-jia-tianchong" color="#EA6F5A"></i><br>
-          </router-link> 
-      </mt-tab-item>
-      <mt-tab-item id=" ">
+      
+      <mt-tab-item id="消息">
            <router-link to="/news" exact>
-              <i class="iconfont icon-xiaoxi1" color="#EA6F5A"></i><br>消息
+              <i class="iconfont icon-xiaoxi1"></i><br>消息
           </router-link>
       </mt-tab-item>      
-      <mt-tab-item id="">
+      <mt-tab-item id="我的">
           <router-link to="/mine" exact>
-              <i class="iconfont icon-wode" color="#EA6F5A"></i><br>我的
+              <i class="iconfont icon-wode" ></i><br>我的
           </router-link>
       </mt-tab-item>
     </mt-tabbar>
@@ -56,21 +51,18 @@
   }
 </script>
 <style scoped>
-  /* .page-tabbar {  
-    overflow: hidden;  
-    height: 100vh;  
-  }  
-  
-  .page-wrap {  
-    overflow: auto;  
-    height: 100%;  
-    padding-bottom: 100px;  
-  }   */
+ 
   .mint-tab-item-label a{
     text-decoration: none;
     display: inline-block;
-    width: 100%;
-    height: 100%;
+    font-size: .32rem /* 24/75 */;
+    color: #b8b8b8;
   }
- 
+  .mint-tab-item-label i {
+    font-size: .586667rem /* 44/75 */;
+  }
+  .is-selected .mint-tab-item-label a{
+   background: #fff;
+    color: #EA6F5A;
+}
 </style>
