@@ -1,10 +1,12 @@
 <template>
   <div class="follow">
-      <div class="search">
-        <input type="search" placeholder="搜索简书上的内容和朋友">          
-      </div>
+      <form class="search">
+        <input type="text" placeholder="搜索简书上的内容和朋友"  v-model="search"
+       onblur="if(this.placeholder=='') placeholder='搜索简书上的内容和朋友';"
+        onfocus="if(this.placeholder=='搜索简书上的内容和朋友') placeholder='';">          
+      </form>
       <div class="line"></div>
-        <div  v-for="article in articles" :key="article.id">
+        <div  v-for="article in filteredArticles" :key="article.id">
                 <div class="body">
                         <div class="info">
                             <img class="avatar" :src=" article.avatar " alt="">
@@ -16,7 +18,7 @@
                         <div class="text">{{ article.text }}</div>
                     </router-link>
                         <div class="meta">
-                            <span >{{ article.comment }}评论·{{ article.like }}喜欢</span>
+                            <span >{{ article.comment }}评论 · {{ article.like }}喜欢</span>
                         </div>
                 </div>
         </div>
@@ -41,7 +43,15 @@
         },
         data() {
             return {
-                articles:[]
+                articles:[],
+                search:''
+            }
+        },
+        computed:{
+            filteredArticles:function() {
+                return this.articles.filter((article) => {
+                    return article.title.match(this.search) || article.nickname.match(this.search);
+                })
             }
         }
         
