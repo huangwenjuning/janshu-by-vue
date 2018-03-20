@@ -19,7 +19,8 @@ import Discovery from './page/home/Discovery';
 import Mine from './page/home/Mine';
 import News from './page/home/News';
 // import Articles from './components/public/Articles.vue'
-import FollowArticles from './components/follow/FollowArticles'
+import Article from './page/article/Article'
+import Fans from './components/mine/Fans'
 
 export default {
   name: 'App',
@@ -30,7 +31,8 @@ export default {
     Index,
     Mine,
     Tabbar,
-    FollowArticles
+    Article,
+    Fans
   }
 } 
 </script>

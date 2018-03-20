@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import MintUI from 'mint-ui'
 import axios from 'axios'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'vue-awesome/icons'
 // import Icon from 'vue-awesome/components/Icon'
 // 自定义样式，覆盖原有mint-ui样式
 // import './assets/css/mint-ui-style.css'
@@ -14,10 +14,15 @@ import Routes from "./router"
 import 'mint-ui/lib/style.css'
 //全局修改mint-UI样式 
 import './assets/css/mint-ui-style.css'
+import VueResource from 'vue-resource'
+import { store } from './store/store'
+import Icon from 'vue-awesome/components/Icon'
 
+Vue.use(VueResource)
 Vue.use(MintUI);
-Vue.use(VueAwesomeSwiper);
 Vue.use(VueRouter);
+Vue.component('icon',Icon)
+
 Vue.config.productionTip = false
 // ajax请求过期时间，最长5秒
 // axios.defaults.timeout = 5000
@@ -35,6 +40,7 @@ const router =new VueRouter({
 })
 
 new Vue({
+  store:store,
   el: '#app',
   router,
   axios,

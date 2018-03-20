@@ -1,5 +1,5 @@
 <template>
-  <div class="followarticles">
+  <div class="article">
       <div class="header"><back></back></div>
       <div class="body"><articles></articles></div>  
   </div>
@@ -8,7 +8,7 @@
     import Back from '../../components/public/Back'
     import Articles from '../../components/public/Articles'
     export default {
-        name: 'followarticles',
+        name: 'article',
         components: {
             Back,
             Articles

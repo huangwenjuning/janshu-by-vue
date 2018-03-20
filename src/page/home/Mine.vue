@@ -1,15 +1,22 @@
 <template>
   <div class="mine">
       <div class="titles">我的<i class="iconfont icon-shezhi"></i> </div>
-       <div class="unlogin">
-           <div class="avatarImg"><i class="iconfont icon-weidenglu"></i></div>
+       <div class="login">
+           <div class="avatarImg"><img src="../../assets/avatar.jpg" alt=""></div>
            <div class="infomation">
-               <p class="user">点击登录账号</p>
+               <p class="user">杳杳飞花</p>
                <p class="write">立即开始创作</p>
            </div>
-           <br clear="both" />
        </div>
-       
+       <div class="details">
+               <span>1<br><span class="colorGray">公开文章</span></span>
+               <router-link to="/mine/fans">
+                    <span>6<br><span class="colorGray">关注</span></span>
+               </router-link>
+               <span>2<br><span class="colorGray">粉丝</span></span>
+        </div>
+           <br clear="both" />
+        
         <div class="items">
             <div class="items1" v-for="index in Items1.length" :key="index.id">
                     <mt-cell :title="Items1[index-1]" is-link >  
@@ -75,6 +82,7 @@
         color: #646464;
         font-size: .64rem /* 48/75 */;
     }
+    
     .titles:after {
         content: "";
         position: absolute;
@@ -85,33 +93,60 @@
         border-top: .013333rem  solid #D5D5D5;
         transform:scaleY(0.5);
     }
-    .unlogin {
+    .login {
         margin-top: .373333rem /* 28/75 */;
+        position: relative;
     }
-    .unlogin .avatarImg {
+    .login:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: -.8rem /* 60/75 */;
+        height: .013333rem /* 1/75 */;
+        border-top: .013333rem  solid #D5D5D5;
+        transform:scaleY(0.5);
+    }
+    .login .avatarImg {
         float: left;
         width: 2.746667rem /* 206/75 */;
         height: 2.4rem /* 180/75 */;
     }
-    .unlogin .avatarImg i {
-        text-align: center;
-        color: #D0D0D0;
-        font-size: 1.893333rem /* 142/75 */;
+    .login .avatarImg img {
+        width: 1.893333rem /* 142/75 */;
+        height: 1.893333rem /* 142/75 */;
+        margin-left: .266667rem /* 20/75 */;
+        margin-top: .213333rem /* 16/75 */;
+        /* border-radius: 999px */
+
     }
-    .unlogin .infomation {
-        color: #888888;
+    .login .infomation {
+        color: #2f2f2f;
     }
-    .unlogin .infomation .user{
-        /* position: relative; */
+    .login .infomation .user{
+        position: relative;
         padding-top: .186667rem /* 14/75 */;
         font-size:.506667rem /* 38/75 */;
     }
-    .unlogin .infomation .write {
+    .login .infomation .write {
         margin-top: .24rem /* 18/75 */;
         font-size: .426667rem /* 32/75 */;
     }
      
-    
+    .details {
+        float: left;
+        margin-bottom: .373333rem /* 28/75 */;
+        margin-top: .373333rem /* 28/75 */;
+    }
+    .details span {
+        font-size: .4rem /* 30/75 */;
+        display: inline-block;
+        margin:0 .533333rem /* 40/75 */;
+        text-align: center;   
+    }
+    .details .colorGray {
+        color: #888;
+    }
    .items {
        position: relative;
    }
